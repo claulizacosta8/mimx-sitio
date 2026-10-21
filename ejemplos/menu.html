@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menú La Higuera</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Karla:wght@400;600;700&display=swap">
+<style>
+/* Ejemplo: menú digital que se abre desde el QR de la mesa. Papel crema, tipografía de la fonda. */
+:root{
+  --paper:#f6ecd0; --ink:#1f2714; --muted:#5f5a40; --line:#d9cba2; --olivo:#2f3a1f; --mostaza:#c8951f;
+  --display:"Yeseva One", Georgia, serif; --body:"Karla", system-ui, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.demo{background:var(--olivo);color:var(--paper);font-size:.85rem;font-weight:700;text-align:center;padding:8px 16px;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.demo a{color:var(--paper)}
+.top{background:var(--olivo);color:var(--paper)}
+.picado{height:44px;background-repeat:repeat-x;background-size:88px 44px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='44'%3E%3Cpath fill-rule='evenodd' fill='%23c2412b' d='M3 0h38v30l-4 4-3-4-4 4-3-4-4 4-3-4-4 4-3-4-4 4-3-4zM22 8a4 4 0 1 0 .01 0z'/%3E%3Cpath fill-rule='evenodd' fill='%23f0b429' d='M47 0h38v30l-4 4-3-4-4 4-3-4-4 4-3-4-4 4-3-4-4 4-3-4zM66 7l5 7-5 7-5-7z'/%3E%3C/svg%3E")}
+header{text-align:center;padding-block:18px 26px}
+header h1{font-family:var(--display);font-weight:400;font-size:2.8rem;margin:0}
+header p{margin:4px 0 0;color:#d9cba2;font-size:.95rem}
+.today{display:inline-block;margin-top:14px;background:var(--mostaza);color:var(--ink);font-weight:700;padding:6px 14px;border-radius:999px;font-size:.9rem}
+.item:hover{background:rgba(200,149,31,.08)}
+.tabs{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line);overflow-x:auto}
+.tabs .wrap{display:flex;gap:8px;padding-block:12px}
+.tabs button{flex:none;font:inherit;font-weight:700;font-size:.95rem;padding:.5rem 1rem;border-radius:999px;border:1.5px solid var(--olivo);background:transparent;color:var(--olivo);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--olivo);color:var(--paper)}
+.tabs button:focus-visible{outline:3px solid var(--mostaza);outline-offset:2px}
+section{padding-block:22px 8px}
+h2{font-family:var(--display);font-weight:400;font-size:1.6rem;margin:0 0 10px}
+.item{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding-block:14px;border-bottom:1px dashed var(--line)}
+.item h3{margin:0;font-size:1.05rem}
+.item .p{font-weight:700;font-variant-numeric:tabular-nums}
+.item p{grid-column:1/-1;margin:0;color:var(--muted);font-size:.93rem}
+.badge{display:inline-block;margin-left:6px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mostaza);vertical-align:middle}
+.note{margin-block:28px;padding:16px 18px;border-radius:14px;background:var(--olivo);color:var(--paper);font-size:.95rem}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding-block:20px 36px}
+</style>
+</head>
+<body>
+<div class="demo">Menú digital de ejemplo hecho por mimx. <a href="restaurante.html">Ver el sitio</a> · <a href="../index.html">Volver a mimx</a></div>
+
+<div class="top">
+  <div class="picado" aria-hidden="true"></div>
+  <header class="wrap">
+    <h1>La Higuera</h1>
+    <p>Menú de hoy · Precios en pesos, IVA incluido</p>
+    <span class="today">Guisado del día: mole de olla</span>
+  </header>
+</div>
+
+<nav class="tabs" aria-label="Secciones del menú">
+  <div class="wrap" role="tablist">
+    <button role="tab" aria-selected="true" data-go="corrida">Comida corrida</button>
+    <button role="tab" aria-selected="false" data-go="platos">Platos fuertes</button>
+    <button role="tab" aria-selected="false" data-go="antojitos">Antojitos</button>
+    <button role="tab" aria-selected="false" data-go="bebidas">Bebidas</button>
+    <button role="tab" aria-selected="false" data-go="postres">Postres</button>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section id="corrida">
+    <h2>Comida corrida</h2>
+    <div class="item"><h3>Menú del día</h3><span class="p">$98</span><p>Sopa o crema, arroz, guisado del día, frijoles, tortillas y agua fresca.</p></div>
+    <div class="item"><h3>Menú del día con postre</h3><span class="p">$118</span><p>Todo lo anterior más el postre de la casa.</p></div>
+  </section>
+  <section id="platos">
+    <h2>Platos fuertes</h2>
+    <div class="item"><h3>Enchiladas queretanas <span class="badge">Favorito</span></h3><span class="p">$115</span><p>Con papa, zanahoria, queso fresco y crema.</p></div>
+    <div class="item"><h3>Mole de olla</h3><span class="p">$130</span><p>Chambarete, elote, calabaza y chile pasilla.</p></div>
+    <div class="item"><h3>Pollo en mole rojo</h3><span class="p">$125</span><p>Pierna y muslo con arroz y ajonjolí.</p></div>
+    <div class="item"><h3>Chiles rellenos</h3><span class="p">$120</span><p>De queso, capeados, en caldillo de jitomate.</p></div>
+  </section>
+  <section id="antojitos">
+    <h2>Antojitos</h2>
+    <div class="item"><h3>Gorditas de migajas (3)</h3><span class="p">$75</span><p>Con salsa verde y cebolla.</p></div>
+    <div class="item"><h3>Quesadillas de flor de calabaza (2)</h3><span class="p">$80</span><p>Tortilla hecha a mano.</p></div>
+    <div class="item"><h3>Sopes (3)</h3><span class="p">$78</span><p>Frijol, queso, lechuga y crema. Con o sin chorizo.</p></div>
+  </section>
+  <section id="bebidas">
+    <h2>Bebidas</h2>
+    <div class="item"><h3>Agua fresca del día</h3><span class="p">$30</span><p>Vaso de 500 ml. Jarra de 1 L, $55.</p></div>
+    <div class="item"><h3>Café de olla</h3><span class="p">$32</span><p>Con canela y piloncillo.</p></div>
+    <div class="item"><h3>Refresco</h3><span class="p">$30</span><p>Vidrio de 355 ml.</p></div>
+  </section>
+  <section id="postres">
+    <h2>Postres</h2>
+    <div class="item"><h3>Arroz con leche</h3><span class="p">$40</span><p>Receta de la casa.</p></div>
+    <div class="item"><h3>Flan napolitano</h3><span class="p">$45</span><p>Con cajeta.</p></div>
+  </section>
+  <p class="note">Pide la cuenta o tu pedido para llevar con tu mesero. Los precios se actualizan aquí mismo, sin reimprimir el menú.</p>
+</main>
+
+<footer>La Higuera · Menú digital de ejemplo creado por mimx</footer>
+
+<script>
+const tabs=[...document.querySelectorAll(".tabs button")];
+tabs.forEach(b=>b.addEventListener("click",()=>{
+  tabs.forEach(t=>t.setAttribute("aria-selected",String(t===b)));
+  const s=document.getElementById(b.dataset.go);
+  const y=s.getBoundingClientRect().top+window.scrollY-70;
+  window.scrollTo({top:y,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}));
+</script>
+</body>
+</html>
