@@ -1,0 +1,398 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>mimx</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Páginas web para negocios. Tu negocio en Google y con página propia en 72 horas hábiles, a precio fijo. Precio de inauguración desde $1,590.">
+<meta property="og:title" content="mimx · Páginas web para negocios">
+<meta property="og:description" content="Tu negocio en Google con página propia y botón de WhatsApp. Precio de inauguración desde $1,590.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: limpio y sobrio. Hero partido (promesa + celular con el negocio en Google), bandas claras, tarjetas suaves. */
+:root{
+  --bg:#ffffff; --alt:#f6f7f9; --surface:#ffffff; --ink:#14161f; --muted:#5b6070; --line:#e4e6ec;
+  --accent:#d81b6a; --accent-ink:#ffffff; --accent-soft:#fdeaf2; --ok:#0f8a6c;
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --shadow:0 1px 2px rgba(20,22,31,.06),0 8px 24px -12px rgba(20,22,31,.18);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1117; --alt:#151821; --surface:#1a1d27; --ink:#eef0f5; --muted:#a3a8b8; --line:#2a2e3a;
+  --accent:#ff4d94; --accent-ink:#1a0610; --accent-soft:#341522; --ok:#3ccfa5;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1117; --alt:#151821; --surface:#1a1d27; --ink:#eef0f5; --muted:#a3a8b8; --line:#2a2e3a;
+  --accent:#ff4d94; --accent-ink:#1a0610; --accent-soft:#341522; --ok:#3ccfa5;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px -12px rgba(0,0,0,.6); color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+h1,h2,h3{line-height:1.12;text-wrap:balance;margin:0;letter-spacing:-.025em}
+h2{font-size:clamp(1.7rem,3.8vw,2.5rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.3rem;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:background .15s, border-color .15s}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-main:hover{filter:brightness(.95)}
+.btn-ghost{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--ink)}
+.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wa-ico{width:19px;height:19px;flex:none}
+
+.promo{background:var(--accent);color:var(--accent-ink);text-align:center;font-weight:700;font-size:.92rem;padding:10px max(16px,env(safe-area-inset-left,0px));padding-top:calc(10px + env(safe-area-inset-top,0px))}
+.promo a{text-decoration:underline;text-underline-offset:3px}
+.was{display:block;font-size:1.05rem;font-weight:600;color:var(--muted);text-decoration:line-through;margin-bottom:6px;letter-spacing:0}
+.promo-tag{display:inline-block;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-top:8px;letter-spacing:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px}
+.logo{font-weight:800;font-size:1.45rem;text-decoration:none;letter-spacing:-.04em}
+.logo span{color:var(--accent)}
+.top nav{display:flex;align-items:center;gap:24px;font-size:.95rem;font-weight:600}
+.top nav a:not(.btn){text-decoration:none;color:var(--muted)}
+.top nav a:not(.btn):hover{color:var(--ink)}
+.top .btn{padding:.55rem 1rem;font-size:.92rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:64px 80px}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.6rem);font-weight:800}
+.rot{color:var(--accent);display:inline-block;transition:opacity .25s ease, transform .25s ease}
+.rot.out{opacity:0;transform:translateY(6px)}
+.hero .lead{font-size:1.15rem;color:var(--muted);max-width:38ch;margin-top:20px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.checks{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;font-size:.93rem;color:var(--muted);list-style:none;padding:0}
+.checks li{display:flex;align-items:center;gap:8px}
+.checks li::before{content:"";width:14px;height:8px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg) translateY(-2px)}
+
+.phone{justify-self:center;width:min(290px,100%);aspect-ratio:9/18;max-width:100%;border-radius:40px;background:#14161f;padding:10px;box-shadow:var(--shadow),0 30px 60px -30px rgba(20,22,31,.35)}
+.screen{height:100%;border-radius:31px;background:#fff;overflow:hidden;color:#14161f;font-size:12px;display:flex;flex-direction:column}
+.gbar{padding:16px 12px 10px;border-bottom:1px solid #eee}
+.gbar div{padding:8px 12px;border-radius:999px;border:1px solid #ddd;color:#666;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gbar b{color:#14161f}
+.biz{flex:1;display:flex;flex-direction:column;transition:opacity .25s ease}
+.biz.out{opacity:0}
+.biz .head{padding:18px 14px;display:grid;gap:6px;color:#fff;background:var(--c,#d81b6a)}
+.biz .k{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.85}
+.biz .n{font-size:19px;font-weight:800;line-height:1.1}
+.biz .open{font-size:11px;opacity:.9}
+.biz .acts{display:flex;gap:6px;padding:12px 14px}
+.biz .acts span{flex:1;text-align:center;padding:8px 0;border-radius:8px;font-weight:700;font-size:11px;background:#25d366;color:#fff}
+.biz .acts span.alt{background:#f1f2f5;color:#14161f}
+.biz .row{display:flex;justify-content:space-between;padding:10px 14px;border-top:1px solid #f0f0f3}
+.biz .row b{font-variant-numeric:tabular-nums}
+.biz .map{flex:1;margin:12px 14px 14px;border-radius:12px;background:
+  linear-gradient(90deg,transparent 46%,#fff 46% 54%,transparent 54%),
+  linear-gradient(0deg,transparent 40%,#fff 40% 48%,transparent 48%),
+  linear-gradient(30deg,transparent 70%,#fff 70% 74%,transparent 74%),#e8ece6;position:relative}
+.biz .map::after{content:"";position:absolute;left:50%;top:44%;width:18px;height:18px;border-radius:50% 50% 50% 0;transform:translate(-50%,-100%) rotate(-45deg);background:var(--c,#d81b6a)}
+
+section{padding-block:80px}
+.alt{background:var(--alt)}
+.sec-head{display:grid;gap:12px;max-width:680px;margin-bottom:40px}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+
+/* giros */
+.giros{display:flex;flex-wrap:wrap;gap:10px}
+.giros span{padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.95rem;font-weight:600}
+
+/* ejemplos */
+.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ex{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;transition:transform .2s ease}
+.ex:hover{transform:translateY(-3px)}
+.ex:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);background:var(--alt)}
+.bar i{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.bar em{margin-left:8px;font-style:normal;font-size:.72rem;color:var(--muted)}
+.mini{aspect-ratio:16/10;max-width:100%;padding:18px;display:grid;align-content:space-between}
+.mini small{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.8;margin-bottom:6px}
+.mini .t{font-size:1.3rem;line-height:1.15;font-weight:700}
+.mini .pill{justify-self:start;font-size:.72rem;font-weight:700;padding:6px 11px;border-radius:8px}
+.m-rest{background:#22301a;color:#f3e2b0}.m-rest .t{font-family:Georgia,serif;font-weight:400}.m-rest .pill{background:#f0b429;color:#22301a}
+.m-salon{background:#f3e6f8;color:#4a1f63}.m-salon .t{font-family:Georgia,serif;font-style:italic;font-weight:400}.m-salon .pill{background:#4a1f63;color:#fff}
+.m-dent{background:#e5f5f6;color:#0b4d60}.m-dent .pill{background:#0b6e86;color:#fff}
+.ex .body{padding:18px 20px 22px;display:grid;gap:6px}
+.ex .body p{color:var(--muted);font-size:.95rem}
+.ex .go{font-weight:700;color:var(--accent);font-size:.95rem}
+.extra{margin-top:22px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;padding:22px 24px;border-radius:18px;background:var(--surface);border:1px solid var(--line)}
+.extra p{max-width:62ch;color:var(--muted)}
+.extra strong{color:var(--ink)}
+
+/* paquetes */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:16px}
+.plan.pick{border:2px solid var(--accent);box-shadow:var(--shadow)}
+.plan .tag{align-self:flex-start;font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.price{font-size:2.3rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1}
+.price small{display:block;font-size:.88rem;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:6px}
+.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;flex:1}
+.plan li{padding-left:26px;position:relative;font-size:.97rem}
+.plan li::before{content:"";position:absolute;left:3px;top:.42em;width:11px;height:6px;border-left:2px solid var(--ok);border-bottom:2px solid var(--ok);transform:rotate(-45deg)}
+.keep{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:8px 28px;align-items:center;padding:22px 26px;border-radius:20px;background:var(--surface);border:1px solid var(--line)}
+.keep .price{font-size:1.8rem}
+.keep p{color:var(--muted)}
+
+/* pasos */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;gap:8px;align-content:start}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:10px;font-weight:800;background:var(--accent-soft);color:var(--accent);margin-bottom:6px}
+.steps p{color:var(--muted)}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:800px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+summary{cursor:pointer;font-weight:700}
+summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:6px}
+details p{margin-top:10px;color:var(--muted)}
+
+/* cierre */
+.close{background:var(--ink);color:var(--bg);border-radius:24px;padding:48px clamp(20px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.close h2{color:var(--bg)}
+.close p{color:color-mix(in srgb,var(--bg) 72%,var(--ink));margin-top:10px}
+.num{font-variant-numeric:tabular-nums;font-weight:700;user-select:all;color:var(--bg)}
+footer{padding-block:32px 48px;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:44px;padding-block:36px 56px}
+  .phone{width:min(260px,80%)}
+  .examples,.plans,.steps{grid-template-columns:1fr}
+  .keep,.close{grid-template-columns:1fr}
+  .top nav a:not(.btn){display:none}
+  section{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<div class="promo">Precio de inauguración: 20% de descuento para los primeros <span data-cupos>10</span> clientes. <a href="#paquetes">Ver paquetes</a></div>
+<header>
+  <div class="wrap top">
+    <a class="logo" href="#inicio" aria-label="mimx, inicio">mi<span>mx</span></a>
+    <nav>
+      <a href="#ejemplos">Ejemplos</a><a href="#paquetes">Paquetes</a><a href="#preguntas">Preguntas</a>
+      <a class="btn btn-main" data-wa href="#contacto">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Páginas web para negocios</p>
+      <h1 style="margin-top:12px">Pon <span class="rot" aria-live="polite">tu restaurante</span> en Google en 72 horas hábiles.</h1>
+      <p class="lead">Página propia, ficha en Google Maps y botón de WhatsApp. Precio de inauguración desde $1,590. Tú nos mandas fotos por WhatsApp y nosotros hacemos el resto.</p>
+      <div class="cta">
+        <a class="btn btn-main" data-wa href="#contacto"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>Escríbenos por WhatsApp</a>
+        <a class="btn btn-ghost" href="#ejemplos">Ver ejemplos</a>
+      </div>
+      <ul class="checks"><li>Sin saber de computación</li><li>Sin contratos largos</li><li>Precio fijo</li></ul>
+    </div>
+    <div class="phone" role="img" aria-label="Celular mostrando un negocio encontrado en Google">
+      <div class="screen">
+        <div class="gbar"><div><b id="q">restaurante</b> cerca de mí</div></div>
+        <div class="biz" id="biz" style="--c:#2f5d34">
+          <div class="head"><span class="k" id="bk">Comida mexicana</span><span class="n" id="bn">Fonda La Higuera</span><span class="open">Abierto · Cierra 6:00 pm</span></div>
+          <div class="acts"><span>WhatsApp</span><span class="alt">Cómo llegar</span></div>
+          <div class="row"><span id="r1a">Comida corrida</span><b id="r1b">$98</b></div>
+          <div class="row"><span id="r2a">Enchiladas queretanas</span><b id="r2b">$115</b></div>
+          <div class="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="alt" id="giros">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Para todo tipo de negocio</p>
+        <h2>Si tus clientes te buscan en Google, necesitas estar ahí</h2>
+      </div>
+      <div class="giros">
+        <span>Restaurantes</span><span>Fondas</span><span>Cafeterías</span><span>Panaderías</span><span>Salones de belleza</span><span>Barberías</span><span>Uñas y pestañas</span><span>Consultorios</span><span>Dentistas</span><span>Psicólogos</span><span>Nutriólogos</span><span>Veterinarias</span><span>Estéticas caninas</span><span>Talleres mecánicos</span><span>Gimnasios</span><span>Estudios de yoga</span><span>Florerías</span><span>Pastelerías</span><span>Tiendas de ropa</span><span>Ferreterías</span><span>Despachos contables</span><span>Abogados</span><span>Escuelas y academias</span><span>Fotógrafos</span><span>Eventos y banquetes</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="ejemplos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Ejemplos</p>
+        <h2>Así se puede ver tu negocio</h2>
+        <p>Tres sitios de muestra con negocios ficticios. Ábrelos desde tu celular: así los verán tus clientes.</p>
+      </div>
+      <div class="examples">
+        <a class="ex" href="ejemplos/restaurante.html">
+          <div class="bar"><i></i><i></i><i></i><em>fondalahiguera.mx</em></div>
+          <div class="mini m-rest"><div><small>Restaurante</small><div class="t">Comida corrida como la de la abuela.</div></div><span class="pill">Pedir por WhatsApp</span></div>
+          <div class="body"><h3>Restaurante</h3><p>Menú, horario, ubicación y pedidos por WhatsApp.</p><span class="go">Ver ejemplo →</span></div>
+        </a>
+        <a class="ex" href="ejemplos/salon.html">
+          <div class="bar"><i></i><i></i><i></i><em>estudiomalva.mx</em></div>
+          <div class="mini m-salon"><div><small>Salón de belleza</small><div class="t">Tu momento, sin prisas.</div></div><span class="pill">Agendar cita</span></div>
+          <div class="body"><h3>Salón de belleza</h3><p>Servicios con precio, galería y citas por WhatsApp.</p><span class="go">Ver ejemplo →</span></div>
+        </a>
+        <a class="ex" href="ejemplos/consultorio.html">
+          <div class="bar"><i></i><i></i><i></i><em>clinicamolar.mx</em></div>
+          <div class="mini m-dent"><div><small>Consultorio</small><div class="t">Tu dentista familiar en el Centro.</div></div><span class="pill">Agendar por WhatsApp</span></div>
+          <div class="body"><h3>Consultorio</h3><p>Tratamientos, horarios y agenda de citas.</p><span class="go">Ver ejemplo →</span></div>
+        </a>
+      </div>
+      <div class="extra">
+        <p><strong>Extra para restaurantes y cafeterías: menú digital con QR.</strong> Tus clientes escanean desde la mesa y ven el menú en su celular. Cambias precios sin volver a imprimir.</p>
+        <a class="btn btn-ghost" href="ejemplos/menu.html">Ver menú de ejemplo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="paquetes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Paquetes</p>
+        <h2>Precio fijo. Sabes cuánto pagas desde el inicio.</h2>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Básico</h3>
+          <div class="price"><span class="was">$1,990</span>$1,590<small>pago único</small><span class="promo-tag">Precio de inauguración</span></div>
+          <ul>
+            <li>Página de una sección con servicios, fotos y horario</li>
+            <li>Mapa y botón de WhatsApp</li>
+            <li>Ficha de Google Maps creada y completa</li>
+            <li>Tu dirección: tunegocio.mimx.store</li>
+            <li>Lista en 72 horas hábiles</li>
+          </ul>
+          <a class="btn btn-ghost" data-wa data-msg="Hola, me interesa el paquete Básico de mimx" href="#contacto">Lo quiero</a>
+        </div>
+        <div class="plan pick">
+          <span class="tag">El más pedido</span>
+          <h3>Profesional</h3>
+          <div class="price"><span class="was">$3,490</span>$2,790<small>pago único</small><span class="promo-tag">Precio de inauguración</span></div>
+          <ul>
+            <li>Todo lo del Básico</li>
+            <li>Hasta 4 secciones: servicios, galería, nosotros, contacto</li>
+            <li>Menú o lista de precios</li>
+            <li>Tu dirección propia: tunegocio.mimx.store</li>
+          </ul>
+          <a class="btn btn-main" data-wa data-msg="Hola, me interesa el paquete Profesional de mimx" href="#contacto">Lo quiero</a>
+        </div>
+        <div class="plan">
+          <h3>Catálogo</h3>
+          <div class="price"><span class="was">$4,990</span>$3,990<small>pago único</small><span class="promo-tag">Precio de inauguración</span></div>
+          <ul>
+            <li>Todo lo del Profesional</li>
+            <li>Dominio propio (tunegocio.com) incluido el primer año</li>
+            <li>Catálogo de productos con fotos y precios</li>
+            <li>Pedidos directo a tu WhatsApp</li>
+            <li>Menú digital con QR incluido</li>
+          </ul>
+          <a class="btn btn-ghost" data-wa data-msg="Hola, me interesa el paquete Catálogo de mimx" href="#contacto">Lo quiero</a>
+        </div>
+      </div>
+      <div class="keep">
+        <div class="price">$249<small>al mes</small></div>
+        <p><strong style="color:var(--ink)">Mantenimiento opcional.</strong> Cambios de precios, fotos y horarios cuando los necesites, y soporte por WhatsApp. Sin mantenimiento, tu página sigue en línea en su dirección, tal como quedó. ¿Prefieres pagar en partes? Pregúntanos por el Básico a mensualidades.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-funciona">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Cómo funciona</p>
+        <h2>Tres pasos y tu negocio ya está en internet</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Nos escribes</h3><p>Por WhatsApp nos cuentas de tu negocio y eliges tu paquete.</p></li>
+        <li><h3>Nos mandas fotos y datos</h3><p>Servicios, precios, horario y dirección. Con fotos de tu celular basta.</p></li>
+        <li><h3>Revisas y publicamos</h3><p>En 72 horas hábiles te mandamos tu página para revisarla y la ponemos en línea.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="alt" id="preguntas">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </div>
+      <div class="faq">
+        <details><summary>¿Necesito saber de computación?</summary><p>No. Todo lo vemos por WhatsApp. Tú solo nos mandas la información y revisas el resultado.</p></details>
+        <details><summary>¿El dominio y la página son míos?</summary><p>La página es tuya. Tu dirección es tunegocio.mimx.store. Con el paquete Catálogo incluimos un dominio propio (tunegocio.com) registrado a tu nombre por el primer año; después lo renuevas tú.</p></details>
+        <details><summary>¿Qué pasa si quiero cambiar precios o fotos después?</summary><p>Con el mantenimiento mensual lo hacemos por ti. Sin mantenimiento, cada cambio se cotiza aparte.</p></details>
+        <details><summary>¿Cuánto dura el precio de inauguración?</summary><p>Es un 20% de descuento en el pago único de cualquier paquete para los primeros <span data-cupos>10</span> clientes. Cuando se llenen los lugares, los paquetes pasan a su precio regular.</p></details>
+        <details><summary>¿Cómo se paga?</summary><p>50% para empezar y 50% cuando apruebas tu página, por transferencia.</p></details>
+        <details><summary>¿Salgo en Google desde el primer día?</summary><p>Tu ficha de Google Maps queda lista y verificada en los días siguientes, según los tiempos de Google. Tu página queda en línea al publicarla.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="wrap">
+      <div class="close">
+        <div>
+          <h2>¿Listo para que te encuentren?</h2>
+          <p>Escríbenos y en minutos te decimos qué paquete le queda mejor a tu negocio. WhatsApp: <span class="num" data-wa-text>Tu número aquí</span></p>
+        </div>
+        <a class="btn btn-main" data-wa href="#contacto">Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>mimx · Páginas web para negocios · México</span>
+  <span>mimx.store</span>
+</footer>
+
+<script>
+/* Cambia aquí tu número: 52 + 10 dígitos, sin espacios. Ejemplo: 524421234567 */
+const WA = "525582330752";
+/* Lugares del precio de inauguración. Cámbialo aquí y se actualiza en toda la página. */
+const CUPOS = 10;
+document.querySelectorAll("[data-cupos]").forEach(el => { el.textContent = CUPOS; });
+const WA_DEFAULT = "Hola, quiero una página para mi negocio 👋";
+const hasNumber = /^52\d{10}$/.test(WA);
+document.querySelectorAll("[data-wa]").forEach(a => {
+  if (!hasNumber) return;
+  const msg = a.getAttribute("data-msg") || WA_DEFAULT;
+  a.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(msg);
+  a.target = "_blank"; a.rel = "noopener";
+});
+document.querySelectorAll("[data-wa-text]").forEach(el => {
+  if (hasNumber) el.textContent = "+52 " + WA.slice(2,5) + " " + WA.slice(5,8) + " " + WA.slice(8);
+});
+
+/* Hero: rota el giro y el negocio que aparece en el celular. Agrega o quita giros aquí. */
+const giros = [
+  {g:"tu restaurante", q:"restaurante", k:"Comida mexicana", n:"Fonda La Higuera", c:"#2f5d34", r:[["Comida corrida","$98"],["Enchiladas queretanas","$115"]]},
+  {g:"tu consultorio", q:"dentista", k:"Consultorio dental", n:"Clínica Dental Molar", c:"#0b6e86", r:[["Limpieza dental","$600"],["Resinas","$700"]]},
+  {g:"tu salón", q:"salón de uñas", k:"Uñas y pestañas", n:"Estudio Malva", c:"#6b2f8a", r:[["Manicure con gel","$280"],["Lifting de pestañas","$480"]]},
+  {g:"tu taller", q:"taller mecánico", k:"Servicio automotriz", n:"Taller El Pistón", c:"#3d4452", r:[["Afinación","$1,200"],["Cambio de aceite","$650"]]},
+  {g:"tu cafetería", q:"cafetería", k:"Café de especialidad", n:"Café Tostado", c:"#7a4a2b", r:[["Latte","$55"],["Pan dulce","$28"]]},
+  {g:"tu veterinaria", q:"veterinaria", k:"Clínica veterinaria", n:"Veterinaria Huellitas", c:"#1f7a5c", r:[["Consulta","$350"],["Vacuna","$280"]]},
+  {g:"tu barbería", q:"barbería", k:"Barbería", n:"Barbería Don Navaja", c:"#1d2433", r:[["Corte clásico","$180"],["Corte y barba","$260"]]},
+  {g:"tu gimnasio", q:"gimnasio", k:"Gimnasio", n:"Gym Fuerza Qro", c:"#c2410c", r:[["Mensualidad","$650"],["Visita","$80"]]},
+  {g:"tu panadería", q:"panadería", k:"Panadería artesanal", n:"Panadería La Espiga", c:"#a16207", r:[["Concha","$14"],["Pastel 1 kg","$380"]]},
+  {g:"tu florería", q:"florería", k:"Arreglos florales", n:"Florería Jacaranda", c:"#9d2b6a", r:[["Ramo de rosas","$450"],["Arreglo de mesa","$600"]]},
+  {g:"tu despacho", q:"contador", k:"Despacho contable", n:"Contadores Asociados", c:"#1e3a8a", r:[["Declaración mensual","$900"],["Asesoría","$500"]]},
+  {g:"tu tienda", q:"tienda de ropa", k:"Ropa y accesorios", n:"Boutique Lima", c:"#be185d", r:[["Vestido","$690"],["Bolsa","$420"]]}
+];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const $ = id => document.getElementById(id);
+const rot = document.querySelector(".rot"), biz = $("biz");
+let i = 0;
+function show(d){
+  rot.textContent = d.g; $("q").textContent = d.q; $("bk").textContent = d.k; $("bn").textContent = d.n;
+  $("r1a").textContent = d.r[0][0]; $("r1b").textContent = d.r[0][1];
+  $("r2a").textContent = d.r[1][0]; $("r2b").textContent = d.r[1][1];
+  biz.style.setProperty("--c", d.c);
+}
+if (!reduce) setInterval(() => {
+  rot.classList.add("out"); biz.classList.add("out");
+  setTimeout(() => { i = (i + 1) % giros.length; show(giros[i]); rot.classList.remove("out"); biz.classList.remove("out"); }, 250);
+}, 2600);
+</script>
+</body></html>
